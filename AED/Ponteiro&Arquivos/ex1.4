@@ -1,56 +1,56 @@
 //**************************************************************
-// Autor: Felipe Fernandes MendonÁa
+// Autor: Felipe Fernandes Mendon√ßa
 // RA: 111788
 // Turma: I
 // Prof: Regina Coelho/Daniela Musa
 //**************************************************************
 
-/*EXERCÕCIO 1.4: Criando um programa que grava o nome de n pessoas em um arquivo texto.
+/*EXERC√çCIO 1.4: Criando um programa que grava o nome de n pessoas em um arquivo texto.
 
-- O usu·rio ir· informar os nomes atÈ digitar a palavra FIM.
+- O usu√°rio ir√° informar os nomes at√© digitar a palavra FIM.
 
-- ApÛs ter gravado os dados no arquivo, uma funÁ„o que recebe como par‚metro um nome
+- Ap√≥s ter gravado os dados no arquivo, uma fun√ß√£o que recebe como par√¢metro um nome
 retorna quantas pessoas existem com aquele mesmo nome no arquivo.*/
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-//DeclaraÁ„o de um ponteiro para arquivo como vari·vel global
+//Declara√ß√£o de um ponteiro para arquivo como vari√°vel global
 FILE *arquivo;
 
-//VerificaÁ„o de quantos nomes presentes no arquivo s„o iguais ao nome passado como par‚metro
+//Verifica√ß√£o de quantos nomes presentes no arquivo s√£o iguais ao nome passado como par√¢metro
 void Verifica_Nome(char nome[])
 {
-    //Declarando vari·veis para obter o tamanho e contar a ocorrÍncia de nomes iguais
+    //Declarando vari√°veis para obter o tamanho e contar a ocorr√™ncia de nomes iguais
     char texto[20];
     int cont=0, tam;
 
     //Abrindo arquivo para leitura
     arquivo = fopen("texto.txt", "r");
 
-    //Se o arquivo n„o for encontrado, retorna um erro
+    //Se o arquivo n√£o for encontrado, retorna um erro
     if(arquivo == NULL)
     {
         printf("Problema ao abrir o arquivo");
         exit(0);
     }
 
-    //Enquanto o arquivo n„o chegar ao fim, lÍ-se o nome e realiza-se a verificaÁ„o de igualdade
+    //Enquanto o arquivo n√£o chegar ao fim, l√™-se o nome e realiza-se a verifica√ß√£o de igualdade
     while(!feof(arquivo))
     {
         fgets(texto, 20, arquivo);
         tam = strlen(texto);
 
-        /*Se o texto obtido do arquivo n„o possuir ao menos um caractere e uma quebra de linha
-        como ˙ltimo elemento, n„o ocorre a exclus„o do \n*/
+        /*Se o texto obtido do arquivo n√£o possuir ao menos um caractere e uma quebra de linha
+        como √∫ltimo elemento, n√£o ocorre a exclus√£o do \n*/
         if ((tam>0) && (texto[tam-1] == '\n'))
         {
             texto[--tam] = 0;
         }
 
-        /*Se o texto obtido do arquivo n„o for igual ao par‚metro passado, n„o occore o
-        acrÈscimo de cont*/
+        /*Se o texto obtido do arquivo n√£o for igual ao par√¢metro passado, n√£o occore o
+        acr√©scimo de cont*/
         if(strcmp(texto, nome) == 0)
         {
             cont++;
@@ -65,21 +65,21 @@ void Verifica_Nome(char nome[])
 
 int main ()
 {
-    //Declarando vari·veis para armazenar os nomes no arquivo e o par‚metro para comparaÁ„o
+    //Declarando vari√°veis para armazenar os nomes no arquivo e o par√¢metro para compara√ß√£o
     char texto[20], nome[20];
     int i=0;
 
     //Abrindo arquivo para escrita
     arquivo = fopen("texto.txt", "w");
 
-    //Se o arquivo n„o for encontrado, retorna um erro
+    //Se o arquivo n√£o for encontrado, retorna um erro
     if(arquivo == NULL)
     {
         printf("Problema ao abrir o arquivo");
         exit(0);
     }
 
-    //Enquanto o usu·rio n„o digitar "fim", armazena-se os nomes no arquivo
+    //Enquanto o usu√°rio n√£o digitar "fim", armazena-se os nomes no arquivo
     while(1)
     {
         scanf("%s", texto);
@@ -103,7 +103,7 @@ int main ()
         i++;
     }
 
-    //Lendo par‚metro para funÁ„o de verificaÁ„o
+    //Lendo par√¢metro para fun√ß√£o de verifica√ß√£o
     scanf("%s", nome);
 
     printf("\n");
@@ -111,7 +111,7 @@ int main ()
     //Fechando o aruqivo
     fclose(arquivo);
 
-    //Chamando funÁ„o de verificaÁ„o
+    //Chamando fun√ß√£o de verifica√ß√£o
     Verifica_Nome(nome);
 
     return 0;

@@ -1,16 +1,16 @@
 //**************************************************************
-// Autor: Felipe Fernandes MendonÁa
+// Autor: Felipe Fernandes Mendon√ßa
 // RA: 111788
 // Turma: I
 // Prof: Regina Coelho/Daniela Musa
 //**************************************************************
 
-/*EXERCÕCIO 1.2: Criando estrutura e imprimindo dados atravÈs de uma funÁ„o*/
+/*EXERC√çCIO 1.2: Criando estrutura e imprimindo dados atrav√©s de uma fun√ß√£o*/
 
 #include <stdio.h>
 #include <stdlib.h>
 
-// DeclaraÁ„o de estrutura do tipo "pessoa"
+// Declara√ß√£o de estrutura do tipo "pessoa"
 typedef struct pessoa
 {
     char nome[20];
@@ -18,7 +18,7 @@ typedef struct pessoa
     int altura;
 } tipo_pessoa;
 
-//Impress„o dos dados armazenados
+//Impress√£o dos dados armazenados
 void Imprime_Dados(tipo_pessoa *pessoa)
 {
     printf("\n");
@@ -32,7 +32,7 @@ int main ()
     // Alocando a estrutura dinamicamente sem cast (void *)
     tipo_pessoa *pessoa = malloc(sizeof(tipo_pessoa));
 
-    /*Se n„o houver memÛria disponÌvel o suficiente, retorna uma mensagem
+    /*Se n√£o houver mem√≥ria dispon√≠vel o suficiente, retorna uma mensagem
     de erro*/
     if(pessoa == NULL)
     {
@@ -45,10 +45,10 @@ int main ()
     scanf("%d", &pessoa->idade);
     scanf("%d", &pessoa->altura);
 
-    //Chamando funÁ„o de impress„o
+    //Chamando fun√ß√£o de impress√£o
     Imprime_Dados(pessoa);
 
-    //Liberando a memÛria alocada
+    //Liberando a mem√≥ria alocada
     free(pessoa);
 
     return 0;

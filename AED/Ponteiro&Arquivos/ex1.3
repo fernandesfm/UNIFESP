@@ -1,16 +1,16 @@
 //**************************************************************
-// Autor: Felipe Fernandes MendonÁa
+// Autor: Felipe Fernandes Mendon√ßa
 // RA: 111788
 // Turma: I
 // Prof: Regina Coelho/Daniela Musa
 //**************************************************************
 
-/*EXERCÕCIO 1.3: Criando vetor de estruturas e imprimindo dados atravÈs de uma funÁ„o*/
+/*EXERC√çCIO 1.3: Criando vetor de estruturas e imprimindo dados atrav√©s de uma fun√ß√£o*/
 
 #include <stdio.h>
 #include <stdlib.h>
 
-// DeclaraÁ„o de estrutura do tipo "pessoa"
+// Declara√ß√£o de estrutura do tipo "pessoa"
 typedef struct pessoa
 {
     char nome[20];
@@ -18,7 +18,7 @@ typedef struct pessoa
     int altura;
 } tipo_pessoa;
 
-//Impress„o dos dados armazenados
+//Impress√£o dos dados armazenados
 void Imprime_Dados(tipo_pessoa *pessoa)
 {
     printf("\n");
@@ -32,7 +32,7 @@ int main ()
     //Declarando vetor de estruturas
     tipo_pessoa *pessoa[100];
 
-    //Declarando vari·veis para obter o tamanho do vetor
+    //Declarando vari√°veis para obter o tamanho do vetor
     int i, n;
 
     scanf("%d", &n);
@@ -42,11 +42,11 @@ int main ()
     {
         pessoa[i] = malloc(sizeof(tipo_pessoa));
 
-        /*Se n„o houver memÛria disponÌvel o suficiente, retorna uma mensagem
+        /*Se n√£o houver mem√≥ria dispon√≠vel o suficiente, retorna uma mensagem
         de erro*/
         if(pessoa == NULL)
         {
-            printf("Memoria n„o alocada");
+            printf("Memoria n√£o alocada");
             exit(0);
         }
 
@@ -55,13 +55,13 @@ int main ()
         scanf("%d", &pessoa[i]->altura);
     }
 
-    //Chamando funÁ„o de impress„o
+    //Chamando fun√ß√£o de impress√£o
     for(i=0; i<n; i++)
     {
         Imprime_Dados(pessoa[i]);
     }
 
-    //Liberando a memÛria alocada
+    //Liberando a mem√≥ria alocada
     for(i=0; i<n; i++)
     {
         free(pessoa[i]);

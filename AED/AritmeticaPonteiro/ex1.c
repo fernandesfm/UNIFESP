@@ -89,7 +89,7 @@ int main()
 
     for(i=0; i<N; i++)
     {
-        /*Comparação elemento a elememento. Caso o valor seguinte seja maior que o atual, atualiza-se
+        /*Comparação elemento a elemento. Caso o valor seguinte seja maior que o atual, atualiza-se
         a variável aux e indice. Caso sejam iguais, realiza-se a comparação dos índices, priorizando
         o maior, seguindo o enunciado*/
         if(aux < *(v+(i+1)))

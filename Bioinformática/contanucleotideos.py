@@ -1,16 +1,14 @@
-#Lê um arquivo FASTA e retorna 4 números inteiros (separados por espaço) contando o respectivo número de vezes que os símbolos 'A', 'C', 'G', and 'T' aparecem.
+'''Lê um arquivo FASTA e retorna 4 números inteiros (separados por espaço) contando o respectivo número de vezes 
+que os símbolos 'A', 'C', 'G', e 'T' aparecem'''
 
 #!/usr/bin/env python
 # coding: utf-8
 
 from Bio import SeqIO
 
-A=0 
-C=0 
-G=0
-T=0
+A=0; C=0; G=0; T=0
 
-for record in SeqIO.parse("covid19.fasta", "fasta"):
+for record in SeqIO.parse("genomacovid.fasta", "fasta"):
     
     for c in record.seq:
         if c == 'A':

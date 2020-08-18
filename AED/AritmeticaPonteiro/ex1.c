@@ -79,7 +79,7 @@ int main()
     if(verifica == N)
     {
         printf("\nNao houveram votos validos.\n");
-        exit(1);
+        exit(0);
     }
 
     //Atribuição de valores a variáveis auxiliares para verificação do mais votado
